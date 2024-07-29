@@ -1,0 +1,24 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../node_modules/@internal/prisma/client"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("SGU_DATABASE_URL")
+}
+
+model tblUsuarios {
+  cpID          BigInt  @id @default(autoincrement())
+  cpRF          String? @db.VarChar(7)
+  cpNome        String? @db.VarChar(250)
+  cpVinculo     String? @db.VarChar(1)
+  cpnomecargo2  String? @db.VarChar(150)
+  cpRef         String? @db.VarChar(6)
+  cpUnid        String? @db.VarChar(15)
+  cpnomesetor2  String? @db.VarChar(250)
+  cpPermissao   String? @db.VarChar(3)
+  cpImprimir    String? @db.VarChar(5)
+  cpUltimaCarga String? @db.VarChar(3)
+  cpOBS         String? @db.VarChar(300)
+}
